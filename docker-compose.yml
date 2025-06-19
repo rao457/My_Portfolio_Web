@@ -1,0 +1,11 @@
+services:
+  portfolio-web:
+    build: .
+    container_name: portfolio_docker
+    ports:
+      - "8000:8000"
+    env_file:
+      - .env
+    volumes:
+      - .:/app
+    

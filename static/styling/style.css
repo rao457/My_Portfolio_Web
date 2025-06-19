@@ -1,0 +1,909 @@
+/* // https://piccalil.li/blog/a-modern-css-reset */
+
+/* Box sizing rules */
+@font-face {
+  font-family: 'Monteserrat bold';
+  src: url('../fonts/Montserrat-ExtraBold.ttf');
+}
+@font-face {
+  font-family: 'Monteserrat';
+  src: url('../fonts/Montserrat-Regular.ttf');
+}
+@font-face {
+  font-family: 'Raleway';
+  src: url('../fonts/Raleway-Regular.ttf');
+}
+@font-face {
+  font-family: 'Open sans';
+  src: url('../fonts/OpenSans-Regular.ttf');
+}
+@font-face {
+  font-family: 'Nunito-Regular';
+  src: url('../fonts/Nunito-Regular.ttf');
+}
+@font-face {
+  font-family: 'Nunito-bold';
+  src: url('../fonts/Nunito-Bold.ttf');
+}
+html{
+  background-color: var(--hero-left-bg-color);
+}
+:root{
+
+  --nav-ff: 'Monteserrat';
+  --nav-fs:clamp(15px, 1.2vw, 18px);
+;
+  --nav-fw: bold;
+  --nav-lh: auto;
+  --nav-color: white;
+  --hero-i-am-fs: clamp(32px, 2.8vw, 40px);
+  --hero-i-am-fw: bolder;
+  --hero-name-fs: clamp(45px, 4.2vw, 60px);
+  --hero-name-fw: bolder;
+  --hero-skill-fs: clamp(13px, 1vw, 15px);
+  --hero-skill-fw: ExtraBold;
+  --hero-skill-color: hsl(0, 0%, 56%);
+
+  --hero-left-bg-color: hsl(0, 0%, 84%);
+  --experience-bg-color: hsl(0, 0%, 11%);
+  --experience-color: hsl(0, 0%, 100%);
+  --experience-ff: 'Open sans';
+  --portfolio-header-bg: hsl(0, 0%, 10%);
+  --portfolio-header-fg: hsl(0, 100%, 99%);
+}
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] ,
+li{
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+   scroll-behavior: auto;
+  }
+  
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+a{
+  text-decoration: none;
+  color: inherit;
+}
+hero{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.nav{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content:space-between;
+  align-items: center;
+  /* background-color: red; */
+
+}
+.nav  .logo{
+  padding-top: 5vh;
+  padding-left: 5vw;
+  width: 45%;
+  /* background-color: rebeccapurple; */
+}
+.nav .logo .mobile{
+  display: none;
+}
+.nav .nav-items{
+  width: 45%;
+}
+.nav .nav-items .nav-links{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 4vw;
+  padding-right: 5vw;
+  /* background-color: green; */
+  padding-top: 4vh;
+  z-index: 1;
+}
+.nav .nav-items .mobile-icons{
+  display: none;
+}
+.nav .nav-items .nav-links a{
+  font-family: 'Monteserrat';
+  font-size: var(--nav-fs);
+  color: var(--nav-color);
+  z-index: 3;
+  font-weight: var(--nav-fw);
+  white-space: nowrap;
+}
+.nav .nav-items .nav-links .contact{
+  color: black;
+  background-color: white;
+  border: none;
+  border-radius: 20px;
+  padding: 1vh 2vw;
+  font-weight: normal;
+  white-space: nowrap;
+
+}
+.hero-main{
+  width: max(100%, 430px);
+  display: grid;
+  grid-auto-flow: column;
+  grid-template-columns:1fr 1.3fr;
+  /* background-color: green; */
+  /* padding-right:min(5vw, 20px); */
+  /* padding-left: min(5vw, 20px); */
+  
+}
+.left-container{
+
+  background-color: var(--hero-left-bg-color);
+  height: 100%;
+  width: 100%;
+}
+
+
+.left{
+  
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  justify-content: center;
+  padding-left: 5vw;
+  /* background-color: red; */
+  /* align-items: center; */
+  
+  
+
+}
+.left .i-am p{
+  font-family: 'Raleway';
+  font-size: var(--hero-i-am-fs);
+  font-weight: var(--hero-i-am-fw);
+  
+  
+}
+.left .name .my-name{
+  font-family: 'Raleway';
+  font-size: var(--hero-name-fs);
+  font-weight: var(--hero-name-fw);
+}
+.left .name .skill{
+  font-family: 'Monteserrat bold';
+  font-size: var(--hero-skill-fs);
+  color: var(--hero-skill-color);
+}
+.left .socio-icons{
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  justify-content: flex-start;
+  gap: 1.5rem;
+  align-items: center;
+  /* background-color: red; */
+}
+.email, .linkedin, .git{
+  height: 56px;
+  width: 61px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: hsl(0, 0%, 77%);
+  box-shadow: 0 4px 8px rgba(0,0,0,.3);
+}
+.right-container{
+   background-color: var(--hero-left-bg-color);
+}
+.right{
+  background-color: var(--hero-left-bg-color);
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-end;
+  position: relative;
+ 
+
+}
+.right-container .right img{
+  width: 400px;
+  height: 100%;
+  z-index: 2;
+  margin-top: -90px;
+}
+.right-container .right .blackbg{
+  position: absolute;
+  height: 100vh;
+  width: 100%;
+  z-index: 1;
+}
+.experience{
+  width: 100%;
+  /* z-index: ; */
+  display: flex;
+  justify-content: center;
+  
+  align-items: center;
+  background-color: var(--experience-bg-color);
+  padding: 2vh 5vw 2vh 5vw;
+  color: var(--experience-color);
+  
+}
+.experience .exp-container{
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+  justify-content: center;
+  align-items: flex-start;
+}
+.experience .exp-container .title{
+  font-family: 'Monteserrat';
+  font-weight: bold;
+  font-size: clamp(24px, 2.2vw, 30px);
+  letter-spacing: 5.562px;
+}
+.experience .exp-container .desc{
+  font-family: var(--experience-ff);
+  font-size: clamp(13px, 1.1vw, 15px);
+  line-height: 138%;
+}
+.experience .exp-container .more-btn{
+  border-left: 2px solid white;
+  border-right: 2px solid white;
+  font-family: 'Monteserrat';
+  font-weight: 600;
+  padding: 0 10px 0 10px;
+}
+.about-skill{
+  margin-top: 1rem;
+  gap: 2.5rem;
+  width: 100%;
+  /* background-color: red;grid */
+  display: flex;
+  flex-direction: column;
+  padding: 5vw;
+  align-items: center;  
+}
+.about{
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  align-items: center;
+  
+}
+.about-head{
+  font-family: 'Monteserrat';
+  font-size: clamp(24px, 2.2vw, 30px);
+  font-weight: 900;
+  letter-spacing: 2.62px;
+  border: 5px solid black;
+  padding: 5px 25px;
+
+}
+.about-para{
+  font-family: 'Open sans';
+  font-size: clamp(13px, 1.1vw, 15px);
+  line-height: 138%;
+
+}
+.about-explore{
+  font-family: 'Monteserrat';
+  font-size: 15px;
+  font-weight: 900;
+  padding: 5px 25px;
+  border-left: 3px solid black;
+  border-right: 3px solid black;
+}
+.specs{
+ display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  text-align: center;
+  padding: 2rem;
+}
+.specs .spec-el{
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  align-items: center;
+
+}
+.specs .spec-el head2{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.specs .spec-el head2 h2{
+  font-family: 'Monteserrat';
+  font-weight: bold;
+  letter-spacing: 18.25%;
+}
+.specs .spec-el desc{
+  font-family: 'Open sans';
+  font-size: clamp(13px, 1.1vw, 15px);
+  font-weight: 100;
+}
+.skills{
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  align-items: center;
+  width: 100%;
+  /* background-color: green; */
+
+}
+.skills .head-skills{
+   font-family: 'Monteserrat';
+  font-size: clamp(24px, 2.2vw, 30px);
+  font-weight: 900;
+  letter-spacing: 2.62px;
+  border: 5px solid black;
+  padding: 5px 25px;
+
+}
+.skills .skill-item{
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  justify-content: center;
+  align-items: center;
+  width:60%;
+  padding: 0;
+  /* background-color: blue; */
+}
+.skills .skill-item .skill-item-items{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  row-gap: 3rem;
+  column-gap: 10rem;
+  /* background-color: green; */
+  width: 100%;
+}
+.skills .skill-item .skill-item-items .item{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1rem;
+  align-items: center;
+  /* background-color: rebeccapurple; */
+  width: 85.48px;
+  height: 99.81px;
+  margin-inline: auto;
+  
+}
+.skills .skill-item .skill-item-head{
+  font-family: 'Monteserrat';
+  font-weight: 1000;
+  font-size: clamp(18px, 4vw, 25px);
+  letter-spacing: 3px;
+  /* background-color: red; */
+  align-self: flex-start;
+}
+.skills .skill-item .skill-item-items .item p{
+  font-family: 'Monteserrat';
+  font-size: 15px;
+  letter-spacing: 3px;
+  white-space: nowrap;
+}
+.portfolio .portfolio-header{
+   position: relative;
+    overflow-x: hidden;
+
+}
+.portfolio .portfolio-header p{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    font-family: 'Monteserrat';
+    font-size: clamp(20px, 2.2vw, 30px);
+    font-weight: 900;
+    letter-spacing: 2.62px;
+    border: 5px solid black;
+  
+    padding: 5px 25px;
+    box-shadow: 0 3px 6px rgba(0,0,0,.1);
+}
+.portfolio .portfolio-items{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+}
+.portfolio .portfolio-items .portfolio-items-head{
+  width: 100%;
+  background-color: var(--portfolio-header-bg);
+  color: var(--portfolio-header-fg);
+  padding: 15px 0 15px 0px;
+  display: flex;
+  flex-direction: row; 
+  flex-wrap: wrap;
+  row-gap: 1rem;
+  column-gap: 5rem;
+  justify-content: center;
+  align-items: center;
+}
+.portfolio .portfolio-items .portfolio-items-items{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+
+}
+#contact{
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-top: 2.5rem;
+  /* background-color: red; */
+  row-gap: 1.5rem;
+}
+#contact .contact-items{
+  width: 60%;
+  /* background-color: blue; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+#contact .contact-items .contact-header{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+#contact .contact-items .contact-header p{
+  font-family: 'Monteserrat';
+  font-size: clamp(24px, 2.2vw, 30px);
+  font-weight: 900;
+  letter-spacing: 2.62px;
+  border: 5px solid black;
+  padding: 5px 25px;
+}
+#contact .contact-items .contact-para{
+  font-family: 'Open Sans';
+  font-size: 15px;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  /* background-color: green; */
+}
+.form-container{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* background-color: rebeccapurple; */
+  margin-top: 3.5rem;
+  position: relative;
+}
+.form-container .form{
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+.form-container .form form{
+  width: 100%;
+  display: flex;
+  flex-direction:column;
+  justify-content: center;
+  align-items: center;
+  gap: 2.5rem;
+  position: relative;
+}
+.form-container .form form .form-input{
+  
+  font-family: 'Monteserrat';
+  font-size: 14px;
+  font-weight: bold;
+  letter-spacing: .5px;
+  width: 100%;
+  outline: none;
+  border-bottom: 5px solid black;
+  border-left: 5px solid black;
+  border-top: 0;
+  border-right: 0;
+  padding: 5px 15px 5px 15px;
+  background-color: var(--hero-left-bg-color);
+  color: hsl(0, 0%, 62%);
+}
+.form-container .form form .submitbtn{
+   font-family: 'Monteserrat';
+   font-weight:bolder;
+   background-color: inherit;
+   cursor: pointer;
+  font-size: 15px;
+  font-weight: 900;
+  padding: 5px 25px;
+  border-left: 3px solid black;
+  border-right: 3px solid black;
+  outline: none;
+  border-top: 0;
+  border-bottom: 0;
+}
+.form-container .popup{
+
+   width: 400px;
+    background-color: white;
+    border-radius: 6px;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -50%)scale(0.01);
+    text-align: center;
+    padding: 0 30px 30px;
+    color: #333;
+    opacity: 0;
+    transition: tranform 0.4s, top 0.4s, opacity 0.4s;
+}
+.form-container .popup.open-popup{
+  top: 50%;
+  opacity: 1;
+  transform: translate(-50%, -50%)scale(1);
+}
+.form-container .popup img{
+    width: 100px;
+    margin-top: -50px;
+    border-radius: 50%;
+    box-shadow: 0 2px 5px rgba(0,0,0,.2);
+    background-color: inherit;
+    justify-self: center;
+}
+.form-container .popup h2{
+    font-size: 38px;
+    font-weight: 500;
+    margin: 30px 0 10px;
+}
+.form-container .popup button{
+  width: 100%;
+    margin-top: 30px;
+    padding: 10px 0;
+    background-color: black;
+    color: white;
+    border: 0;
+    outline: none;
+    font-size: 18px;
+    border-radius: 4px;
+    cursor: pointer;
+    box-shadow: 0 5px 5px rgba(0,0,0,.5);
+}
+footer{
+  width: 100%;
+  margin-top: 2.5rem;
+  font-family: inherit;
+  background-color: hsl(0, 0%, 10%);
+  color: hsl(0, 0%, 100%);
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+}
+footer .back-to-top{
+  display: flex;
+  flex-direction: inherit;
+  /* background-color: green; */
+  justify-content: center;
+  row-gap: .5rem;
+  align-items: center;
+}
+footer .back-to-top top-text p{
+  font-family: 'Monteserrat';
+  font-size: 15px;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+footer .socio-icons{
+  display: flex;
+  flex-direction: row;
+  column-gap: 1.5rem;
+}
+footer .tra-text{
+  font-size: 18px;
+  font-family: 'Nunito-Regular';
+
+}
+footer .tra-text #name{
+  font-family: 'Nunito-bold';
+}
+@media (max-width: 980px) {
+  .nav{
+    inset: 0;
+    height: 57px;
+    width: 100%;
+    display: flex;
+    flex-direction:row;
+    justify-content: space-between;
+    align-items: center;
+    background-color: black; 
+    z-index: 4;
+    overflow: visible;
+  }
+  .nav .logo{
+    padding: 0;
+    width: 45%;
+    padding-left: 20px;
+    /* background-color: blue; */
+  }
+  .nav .logo .desktop{
+    display: none;
+  }
+  .nav .logo .mobile{
+    
+    display: block;
+    /* background-color: white; */
+  }
+  .nav .nav-items .nav-links{
+    display: none;
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    flex-direction: column;
+    z-index:5 ;
+    top: 57px;
+    left: 0;
+    overflow: visible;
+    background-color: hsl(0, 5%, 11%, 0.6);
+    color: white;
+    padding: 0;
+    padding-top: 2vh;
+  }
+  .nav .nav-items .nav-links .contact{
+    background-color: white;
+    color:black;
+    width: 100%;
+    border-radius: 0;
+    /* padding: 0; */
+  }
+  .nav .nav-items .nav-links.show{
+    display: flex;
+  }
+  .nav .nav-items{
+    gap:0;
+    padding-right: 20px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex-direction: row;
+    width: 100%;
+
+    /* background-color: blueviolet; */
+    
+  }
+
+  .nav .nav-items .mobile-icons{
+    /* display: block; */
+    z-index: 2;
+    position:unset;
+    padding: 0;
+    width: 45%;
+    /* background-color: red; */
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding-left: 20px;
+    
+  }
+}
+@media (max-width: 718px) {
+  .email, .linkedin, .git{
+    background-color: transparent;
+    box-shadow: none;
+  }
+}
+@media (max-width: 683.5px) {
+  #learning,
+  #other-skills{
+    display: none;
+  }
+}
+
+@media (max-width: 568px) {
+  .hero *{
+    outline:  1px solid black;
+  }
+  .right-container .right img{
+    margin-top: 1rem;
+  }
+  
+  .hero{
+    background-color: black;
+    position: relative;
+    padding-right: 0;
+    
+  }
+  .hero-main {
+    padding-right: 0;
+    display: flex !important;
+    flex-direction: column-reverse!important;
+    position: absolute;
+    background-color: black;
+    top: 57px;
+    left: 0;
+    width: 100%;
+    height: calc(100% - 57px);
+    overflow-y: hidden;
+    z-index: -2;
+  
+  }
+  .right-container{
+    
+    /* background-color: red; */
+    height: 800px;
+    
+    z-index: 3;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .right-container .right{
+    width: 100%;
+    height: 100%;
+    background-color:black;
+    /* display: flex;
+    justify-content: center;
+    z-index: -1;
+    align-items: center; */
+    position: relative;
+    
+    
+  }
+  .right-container .right img{
+    position: absolute;
+    top: -190px;
+    left: 0px;
+    width: 100%;
+    height: 1000px;
+    z-index: 5;
+    object-fit: cover;
+   
+  }
+  .right-container .right .blackbg{
+    display: none;
+  }
+  .left-container{
+    background-color: hsl(0, 0%, 40%, .8); /* Or your desired color */
+    color: white;
+    padding-left: 10px 0px 0px 20px;
+    clip-path: polygon(0 15%, 100% 0, 100% 100%, 0% 100%);
+    z-index: 5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 27vh;
+    position: absolute;
+    bottom: 0;
+    
+  
+  }
+  .left-container .left{
+    width: 100%;
+    /* background-color: red; */
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 5px;
+    position: relative;
+  }
+  .left-container .left .i-am, .name, .socio-icons{
+    /* border: 2px solid green; */
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    text-shadow: 0 3px 6px rgba(0,0,0,.4);
+    
+
+  }
+  .left-container .left .socio-icons{
+    position: absolute;
+    width: fit-content;
+    right: 20px;
+
+    gap: .5rem;
+    color: white;
+  }
+  .left-container .left .i-am p{
+    font-size: 20px;
+    font-weight: bold;
+  }
+  .left-container .left .name .my-name{
+    font-size: 30px;
+    font-weight: bold;
+  }
+  .left-container .left .name .skill{
+    font-size: 12px;
+    font-weight: bolder;
+    color: white;
+  }
+
+  
+  
+  .experience{
+    position: relative;
+    margin-top: calc(100vh - 115px);
+    z-index: 3;
+  }
+  
+  .portfolio .portfolio-items .portfolio-items-items{
+    display: grid;
+    grid-auto-flow: row;
+  }
+  .portfolio{
+    margin-top: 1rem;
+  }
+  .form-container .form{
+    width: 80%;
+  }
+
+}

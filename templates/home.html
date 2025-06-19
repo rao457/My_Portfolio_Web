@@ -1,0 +1,348 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="{% static 'styling/style.css' %}">
+</head>
+<body>
+    <hero>
+        <nav class="nav">
+            <logo class="logo">
+
+                <img class="desktop" src="{% static 'images/hero-images/Group.png' %}">
+                <img class="mobile" src="{% static 'images/hero-images/mobilelogo.png' %}">
+             </logo>
+            <nav-items class="nav-items">
+                    <div class="mobile-icons" id="navtogglebtn">
+                        <img id="img1" src="{% static 'images/hero-images/hamburger.png' %}" alt="#" class="hamburger" data-visibility="true" style="display: block;" onclick="toggleImage()">
+                        <img id="img2" src="{% static 'images/hero-images/cross.png' %}" alt="#" class="cross" data-visibility="false" style="display: none;" onclick="toggleImage()">
+                    </div>
+                    <div class="nav-links">
+
+                        <a href="#about">About me</a>
+                        <a href="#skills">Skills</a>
+                        <a href="#portfolio">Portfolio</a>
+                        <a class="contact" href="#contact">Contact Me</a>
+                    </div>
+            </nav-items>
+           
+        </nav>
+        <hero-main class="hero-main">
+            <div class="left-container">
+
+                <left class="left">
+                        <i-am class="i-am">
+                            <p>
+                                    Hey, I am
+                            </p>
+                        </i-am>
+                        <name class="name">
+                                <p class="my-name">
+                                    Mr. Zohaib
+                                </p>
+                                <p class="skill">
+                                    Building & Securing the Web
+                                </p>
+                        </name>
+                        <socio-icon class="socio-icons">
+                                <email class="email">
+                                    <img src="{% static 'images/hero-images/email.png' %}">
+                                </email>
+                                <git class="git">
+                                    <img src="{% static 'images/hero-images/git.png' %}">
+                                </git>
+                                <linkedin class="linkedin">
+                                    <img src="{% static 'images/hero-images/linkedin.png' %}">
+                                </linkedin>
+                        </socio-icon>
+                    </left>
+            </div>
+                <div class="right-container">
+                    <right class="right">
+                        <img src="{% static 'images/hero-images/subject_long.png' %}" class="man">
+                        <img class="blackbg" src="{% static 'images/hero-images/blackbg.png' %}">
+                    </right>
+                    
+                </div>
+        </hero-main>
+    </hero>
+    <experience class="experience">
+        <div class="exp-container">
+            <p class="title">
+                Massive Dynamics
+            </p>
+            <p class="desc">
+                I am an active member of a scientific club that brings together enthusiasts of the Internet and emerging technologies. At Massive Dynamics, we design and develop full-scale websites and web applications. Alongside project work, our most ambitious initiative is the Ciemna Strona UX conference, now in its sixth edition. Contributing as a Full-Stack Developer and Cybersecurity Analyst, I've strengthened my skills in secure development, teamwork, and delivering under tight deadlines. If you’d like to learn more about our work, click the button below!
+            </p>
+           <a class="more-btn" href="#">
+                READ MORE
+            </a>
+        </div> 
+        
+    </experience>
+    <about-skill class="about-skill">
+       <about class="about" id="about">
+            <div class="about-head">
+                <p>
+                    ABOUT ME
+                </p>
+            </div>
+            <div class="about-para">
+                My name is Muhammad Zohaib. I'm a second year Information Technology Student at TUB in Pakistan. I have been building and securing web apps for three years and this time was just enough for me to make sure that this is my place in the industry.
+                Working with Massive Dynamics, Internee.pk and Nexus developed my skills, which quickly turned into a new hobby. I am fluent in English(Spoken and written) and beginner Italian. Apart from designing and programming websites, my passion is to be play football in free time.    
+            </div>
+            <div class="about-explore">
+                <a href="#">
+                    EXPLORE
+                </a>
+            </div>
+            <div class="fancy-line-1">
+                <img src="{% static 'images/about-us-images/fancyline1.png' %}">
+            </div>
+            <div class="specs">
+                <div class="spec-el" id="design">
+                    <head2 class="head">
+                        <img src="{% static 'images/about-us-images/design.png' %}">
+                        <h2>DESIGN</h2>
+                    </head2>
+                    <desc>
+                        I can design the website based on your needs and suggestions. I can also create it from scratch by consulting with you during work.
+                    </desc>
+                </div>
+                <div class="spec-el" id="development">
+                    <head2>
+                        <img src="{% static 'images/about-us-images/development.png' %}">
+                        <h2>DEVELOPMENT</h2>
+                    </head2>
+                    <desc>
+                        Based on a project created by me or another one, sent by you, I can program the website to be fully functional and responsive.
+                    </desc>
+                </div>
+                <div class="spec-el" id="maintenance">
+                    <head2>
+                        <img src="{% static 'images/about-us-images/maintenance.png' %}">
+                        <h2>MAINTENANCE</h2>
+                    </head2>
+                    <desc>
+                        In case of any problems or the need for changes, I can introduce new functionalities and solutions.
+
+                    </desc>
+                </div>
+                
+            </div>
+            <div class="fancy-line-2">
+                <img src="{% static 'images/about-us-images/fancyline1.png' %}">
+            </div>
+       </about>
+       <skills class="skills" id="skills">
+            <div class="head-skills">
+                <p>
+                    SKILLS
+                </p>
+            </div>
+            <div class="skill-item" id="using">
+               <p class="skill-item-head"  id="using-head">
+                    USING NOW: 
+               </p>
+               <div class="skill-item-items"  id="using-items">
+                    
+
+                    <div id="html" class="item">
+                            <img src="{% static 'images/about-us-images/html.png' %}">
+                            <p>
+                                HTML
+                            </p> 
+                    </div>
+                    
+                    <div id="css" class="item">
+                        <img src="{% static 'images/about-us-images/css-3.png' %}">
+                        <p>
+                            CSS
+                        </p>
+                    </div>
+                    <div id="js" class="item">
+                        <img src="{% static 'images/about-us-images/js.png' %}">
+                        <p>
+                            JAVASCRIPT
+                        </p>
+                    </div>  
+                    <div id="docker" class="item">
+                        <img src="{% static 'images/about-us-images/docker.png' %}">
+                        <p>
+                            DOCKER
+                        </p>
+                    </div>
+                    <div id="django" class="item">
+                        <img src="{% static 'images/about-us-images/django.png' %}">
+                        <p>
+                            DJANGO
+                        </p>
+                    </div>
+                    <div id="social" class="item">
+                        <img src="{% static 'images/about-us-images/social.png' %}">
+                        <p>
+                            GIT
+                        </p>
+                    </div>
+                    <div class="item" id="sql">
+                        <img src="{% static 'images/about-us-images/programing.png' %}">
+                        <p>
+                            SQL DB
+                        </p>
+                    </div>
+               </div>
+            </div>
+            <div class="skill-item" id="learning">
+                <p  class="skill-item-head" id="learning-head">
+                    LEARNING:
+                </p>
+                <div  class="skill-item-items" id="learning-items">
+                    <div  class="item" id="flutter">
+                        <img src="{% static 'images/about-us-images/tools.png' %}">
+                        <p>
+                            FLUTTER
+                        </p>
+                    </div>
+                    <div class="item" id="security">
+                        <img src="{% static 'images/about-us-images/security.png' %}">
+                        <p>
+                            WEB SECURITY
+                        </p>
+                    </div>
+                    <div class="item" id="mongodb">
+                        <img src="{% static 'images/about-us-images/database.png' %}">
+                        <p>
+                            MONGODB
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+            <div class="skill-item" id="other-skills">
+                <p class="skill-item-head" id="other-skills-head">
+                    OTHER SKILLS:    
+                </p>
+                <div  class="skill-item-items" id="other-skill-items">
+                    <div class="item" id="english">
+                        <img src="{% static 'images/about-us-images/united-kingdom.png' %}">
+                        <p>
+                            ENGLISH
+                        </p>
+                    </div>
+                    <div class="item" id="italian">
+                        <img src="{% static 'images/about-us-images/italian.png' %}">
+                        <p>
+                            ITALIAN
+                        </p>
+                    </div>
+                    <div class="item" id="c">
+                        <img src="{% static 'images/about-us-images/c-.png' %}">
+                        <p>
+                            C++
+                        </p>
+                    </div>
+                    <div class="item" id="teacher">
+                        <img src="{% static 'images/about-us-images/teacher.png' %}">
+                        <p>
+                            TEACHING
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+       </skills>
+    </about-skill>
+    <div class="portfolio" id="portfolio">
+        <div class="portfolio-header">
+            <img src="{% static 'images/portfolio/bg.png' %}">
+            <p>
+                PORTFOLIO
+            </p>
+        </div>
+        <div class="portfolio-items">
+            <div class="portfolio-items-head">
+                <p class="portfolio-head">ALL</p>
+                <p class="portfolio-head">DESIGNED</p>
+                <p class="portfolio-head">CODED</p>
+            </div>
+            <div class="portfolio-items-items">
+                <img src="{% static 'images/portfolio/Project.png' %}" alt="#" class="portfolio-images">
+                <img src="{% static 'images/portfolio/Project (1).png' %}" alt="#" class="portfolio-images">
+                <img src="{% static 'images/portfolio/Project (2).png' %}" alt="#" class="portfolio-images">
+            </div>
+            <div class="portfolio-items-head" id="portfolio-items-footer">
+                <p>
+                    And Many More to Come
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="contact" id="contact">
+        <div class="contact-items">
+            <div class="contact-header">
+                <p>
+                    CONTACT
+                </p>
+            </div>
+            <div class="contact-para">
+                <p>
+                    Open to new opportunities and collaborations — let’s connect to discuss how I can add value to your next project.
+                </p>
+            </div>
+            <div class="fancyline">
+                <img src="{% static 'images/about-us-images/fancyline1.png' %}">
+            </div>
+        </div>
+    </div>
+    <div class="form-container">
+        <div class="form">
+            <form method="post" id="contact-form">
+                {% csrf_token %}
+                {{form.name}}
+                {{form.email}}
+                {{form.phone}}
+                {{form.message}}
+                <button class="submitbtn" id="subBtn" type="submit" data-url = "{% url 'PortfolioApp:home' %}">SUBMIT</button>
+                
+            </form>
+        </div>
+        <div class="popup" id="popup">
+                <img src="{% static 'images/contact/checked.png' %}">
+                <h2>
+                    Thank You!
+                </h2>
+                <p>
+                Thanks for reaching out! We'll be in touch shortly.
+                </p>
+                <button id="okBtn">You're Welcome</button>
+        </div>
+    </div>
+    <footer id="footer">
+        <div class="back-to-top">
+            <top-icon>
+               <a href="#"><img src="{% static 'images/footer/two-arrow.png' %}"></a> 
+            </top-icon>
+            <top-text>
+                <p>
+                    BACK TO TOP
+                </p>
+            </top-text>
+        </div>
+        <div class="socio-icons">
+            <a href="#"><img src="{% static 'images/footer/facebook.png' %}"></a>            
+            <a href="#"><img src="{% static 'images/footer/linkedin.png' %}"></a>            
+            <a href="#"><img src="{% static 'images/footer/insta.png' %}"></a>            
+            <a href="#"><img src="{% static 'images/footer/mail.png' %}"></a>            
+           
+        </div>
+        <div class="tra-text">
+            <p>&copy2025 <span id="name">Mr. Zohaib.</span> All rights reserved.</p>
+        </div>
+    </footer>
+    <script src="{% static 'scripting/script.js' %}"></script>
+</body>
+</html>
