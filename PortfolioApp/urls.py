@@ -11,4 +11,5 @@ urlpatterns = [
         template_name="sitemap.xml",
         content_type="application/xml"
     )),
+    path("googlec3877bf1c19a480b.html", TemplateView.as_view(template_name="googlec3877bf1c19a480b.html", content_type="text/html")),
 ]
