@@ -1,0 +1,4 @@
+User-agent: *
+Disallow:
+
+Sitemap: https://muhammad-zohaib.onrender.com/sitemap.xml
