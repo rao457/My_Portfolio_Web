@@ -3,8 +3,11 @@ from django.shortcuts import render
 from django.views.generic.edit import FormView
 from django.views.generic import TemplateView
 from .forms import ContactForm
-# Create your views here.
+from django.views.decorators.cache import cache_page
+from django.utils.decorators import method_decorator
 
+# Create your views here.
+@cache_page(60 * 15)
 class HomeView(FormView):
     form_class = ContactForm
     success_url = "/thanks/"   
