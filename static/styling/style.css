@@ -571,7 +571,7 @@ hero{
   border-right: 0;
   padding: 5px 15px 5px 15px;
   background-color: var(--hero-left-bg-color);
-  color: hsl(0, 0%, 62%);
+  color: hsl(0, 0%, 15%);
 }
 .form-container .form form .submitbtn{
    font-family: 'Monteserrat';
