@@ -20,6 +20,6 @@ class HomeView(FormView):
         if self.request.headers.get('x-requested-with') == 'XMLHttpRequest':
             return JsonResponse({"errors": form.errors}, status=400)
         return super().form_invalid(form)
-@method_decorator(cache_page(60 * 15), name="dispatch")
+@method_decorator(cache_page(60 * 24), name="dispatch")
 class ThankView(TemplateView):
     template_name = 'thanks.html'
